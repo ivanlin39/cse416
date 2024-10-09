@@ -1,0 +1,38 @@
+{
+    "state": "NM",
+    "democratVote": 387565,
+    "republicanVote": 316313,
+    "totalVote": 703878,
+    "population": {
+        "white": {
+            "district01": 278556,
+            "district02": 177682,
+            "district03": 207824
+        },
+        "black": {
+            "district01": 13683,
+            "district02": 10068,
+            "district03": 7027
+        },
+        "asian": {
+            "district01": 16052,
+            "district02": 6276,
+            "district03": 6661
+        },
+        "hispanic": {
+            "district01": 212166,
+            "district02": 299999,
+            "district03": 214599
+        },
+        "americanIndian": {
+            "district01": 22103,
+            "district02": 26128,
+            "district03": 207824
+        },
+        "twoOrMoreRace": {
+            "district01": 17858,
+            "district02": 11448,
+            "district03": 12606
+        }
+    }
+}

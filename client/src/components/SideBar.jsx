@@ -1,18 +1,21 @@
-import { Box } from "@mui/material";
-import SideBarHeader from "./SideBarHeader";
+import { Box, Button } from "@mui/material";
 import { Routes, Route } from 'react-router-dom';
-import Introduction from "./Header/Introduction";
-import FRAInfo from "./Header/FRAInfo";
-import AboutUs from "./Header/AboutUs";
+import Home from "./Home";
+import Fairness from "./Fairness";
+import { useNavigate } from "react-router";
 
 const SideBar = () => {
+    const navigate = useNavigate();
     return (
-        <Box sx={{ height: "100%", width: "60%" }}>
+        <Box sx={{ p:2, height: "100%", width: "60%" }}>
+            <Box>
+                <Button onClick={() => navigate("/fairness")} sx={{textTransform:"none"}} variant="contained">
+                    Fairness
+                </Button>
+            </Box>
             <Routes>
-                <Route path="/" element={<SideBarHeader />} />
-                <Route path="/introduction" element={<Introduction />} />
-                <Route path="/frainfo" element={<FRAInfo />} />
-                <Route path="/aboutus" element={<AboutUs />} />
+                <Route path="/" element={<Home />} />
+                <Route path="/fairness" element={<Fairness />} />
             </Routes>
         </Box>
     )

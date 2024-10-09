@@ -1,5 +1,5 @@
 import { Box, Typography } from "@mui/material";
-import Banner from "./components/Header/Banner";
+import Banner from "./components/Banner";
 import SideBar from "./components/SideBar";
 import Map from "./components/Map";
 

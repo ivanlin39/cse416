@@ -4,6 +4,7 @@ import App from './App.jsx';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import CssBaseline from "@mui/material/CssBaseline";
 import { BrowserRouter } from "react-router-dom";
+import { GlobalProvider } from "./context/GlobalContext";
 
 const theme = createTheme({
   palette: {
@@ -24,7 +25,9 @@ createRoot(document.getElementById('root')).render(
     <ThemeProvider theme={theme}>
       <CssBaseline>
         <BrowserRouter>
-          <App />
+          <GlobalProvider>
+            <App />
+          </GlobalProvider>
         </BrowserRouter>
       </CssBaseline>
     </ThemeProvider>
