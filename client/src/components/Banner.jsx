@@ -1,10 +1,8 @@
-import { useNavigate } from "react-router";
-import { Box, AppBar, Button, FormControl, InputLabel, Select, MenuItem } from "@mui/material";
+import { Box, AppBar, Typography, FormControl, InputLabel, Select, MenuItem } from "@mui/material";
 import { useContext } from "react";
 import { GlobalContext } from "../context/GlobalContext";
 
 const Banner = () => {
-    const navigate = useNavigate();
     const { state, Zoom, Center, Name } = useContext(GlobalContext);
 
     const handleChange = (e) => {
@@ -26,10 +24,8 @@ const Banner = () => {
     return (
         <Box sx={{height: "8%"}}>
             <AppBar sx={{display: "flex", flexDirection: "row", justifyContent:"space-between", height:"8%"}}>
-                <Box sx={{pl: 10, height: "100%"}}>
-                    <Button sx={{height:"100%", textTransform: "none"}} onClick={() => navigate("/")}>
-                        Home
-                    </Button>
+                <Box sx={{fontSize: 40, pl: 10, height: "100%", display:"flex", alignItems:"center"}}>
+                    Team Raiders
                 </Box>
                 <Box sx={{pr: 10, pt: 1, width:250}}>
                     <FormControl fullWidth>

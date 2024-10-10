@@ -10,14 +10,14 @@
             "district03": 207824
         },
         "black": {
-            "district01": 13683,
-            "district02": 10068,
-            "district03": 7027
+            "district01": 20639,
+            "district02": 15151,
+            "district03": 10632
         },
         "asian": {
-            "district01": 16052,
-            "district02": 6276,
-            "district03": 6661
+            "district01": 22125,
+            "district02": 9810,
+            "district03": 9287
         },
         "hispanic": {
             "district01": 212166,
@@ -25,9 +25,9 @@
             "district03": 214599
         },
         "americanIndian": {
-            "district01": 22103,
-            "district02": 26128,
-            "district03": 207824
+            "district01": 40712,
+            "district02": 42357,
+            "district03": 105408
         },
         "twoOrMoreRace": {
             "district01": 17858,
