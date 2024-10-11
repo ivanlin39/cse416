@@ -1,16 +1,30 @@
-import { Box, Typography } from "@mui/material";
+import { useEffect, useContext } from "react";
+import { Box } from "@mui/material";
 import Banner from "./components/Banner";
-import SideBar from "./components/SideBar";
-import Map from "./components/Map";
+import { GlobalContext } from "./context/GlobalContext";
+import { Routes, Route, useNavigate } from "react-router-dom";
+import HomePage from "./components/HomePage";
+import MarylandPage from "./components/MarylandPage";
 
 function App() {
+  const { state } = useContext(GlobalContext);
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        if(state.name === "USA"){
+            navigate("/");
+        }else{
+            navigate("/Maryland");
+        }
+    }, [state]);
+
   return (
-    <Box sx={{ height: "100vh", width: "100%", display: 'flex', flexDirection: 'column' }}>
+    <Box sx={{ height: "100vh", width: "100%"}}>
       <Banner />
-      <Box sx={{ height: "100%", display: 'flex'}}>
-        <SideBar />
-        <Map />
-      </Box>
+      <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/Maryland" element={<MarylandPage />} />
+      </Routes>
     </Box>
   )
 }

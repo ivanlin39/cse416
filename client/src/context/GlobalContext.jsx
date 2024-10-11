@@ -3,7 +3,7 @@ import { createContext, useReducer } from "react";
 const initialState = {
     name: "USA",
     zoom: 4,
-    center: { lat: 39, lng: -96 }
+    center: { lat: 38, lng: -96 }
 };
 
 const globalReducer  = (state, action) => {
@@ -15,6 +15,8 @@ const globalReducer  = (state, action) => {
             return { ...state, center: payload }
         case "NAME":
             return { ...state, name: payload }
+        case "UPDATEALL":
+            return { ...state, ...payload}
         default: 
             return state
     }
@@ -41,8 +43,14 @@ export const GlobalProvider = ({ children }) => {
             payload: str
         });
     }
+    const UpdateAll = (name, zoom, center) => {
+        dispatch({
+            type: "UPDATEALL",
+            payload: { name, zoom, center }
+        })
+    }
     return(
-        <GlobalContext.Provider value={{state, Zoom, Center, Name}}>
+        <GlobalContext.Provider value={{state, Zoom, Center, Name, UpdateAll}}>
             { children }
         </GlobalContext.Provider>
     )

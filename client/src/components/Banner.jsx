@@ -1,23 +1,15 @@
-import { Box, AppBar, Typography, FormControl, InputLabel, Select, MenuItem } from "@mui/material";
+import { Box, AppBar, FormControl, InputLabel, Select, MenuItem } from "@mui/material";
 import { useContext } from "react";
 import { GlobalContext } from "../context/GlobalContext";
 
 const Banner = () => {
-    const { state, Zoom, Center, Name } = useContext(GlobalContext);
+    const { state, UpdateAll } = useContext(GlobalContext);
 
     const handleChange = (e) => {
         if(e.target.value == "USA"){
-            Zoom(4);
-            Center({lat: 39, lng: -96});
-            Name("USA");
+            UpdateAll("USA", 4, {lat: 39, lng: -96});
         }else if(e.target.value == "MD"){
-            Zoom(7);
-            Center({lat: 39, lng: -76.6});
-            Name("MD");
-        }else if(e.target.value == "NM"){
-            Zoom(6);
-            Center({lat: 35, lng: -105});
-            Name("NM");
+            UpdateAll("MD", 7, {lat: 39, lng: -76.6});
         }
     }
 
@@ -36,7 +28,6 @@ const Banner = () => {
                         >
                             <MenuItem value="USA">United States</MenuItem>
                             <MenuItem value="MD">Maryland</MenuItem>
-                            <MenuItem value="NM">New Mexico</MenuItem>
                         </Select>
                     </FormControl>
                 </Box>
