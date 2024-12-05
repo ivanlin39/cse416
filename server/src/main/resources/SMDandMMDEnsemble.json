@@ -1,0 +1,25 @@
+{
+    "smd": {
+        "numOfPlan": 20,
+        "avgMinorityRepresentative": "2",
+        "avgEqualPopulation": ".8",
+        "avgRepDemSplit": {
+            "republican": ".37",
+            "democrat": ".63" 
+        },
+        "rangeOfRepresentative": "3",
+        "rangeOfRepDemSplit" : "4"
+    },
+    "mmd": {
+        "numOfPlan": 20,
+        "avgMinorityRepresentative": "3",
+        "avgEqualPopulation": ".6",
+        "avgRepDemSplit": {
+            "republican": ".23",
+            "democrat": ".77" 
+        },
+        "rangeOfRepresentative": "2",
+        "rangeOfRepDemSplit" : "3"
+
+    }
+}

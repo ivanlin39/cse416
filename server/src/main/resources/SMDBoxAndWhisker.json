@@ -1,0 +1,8 @@
+{
+    "comparisonBasis" : "democratPopulationPercentage",
+    "min": ".33",
+    "q1": ".52",
+    "medium" : ".61",
+    "q3": ".72",
+    "max": ".81"
+}

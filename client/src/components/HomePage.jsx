@@ -1,11 +1,8 @@
-import { Box } from "@mui/material";
 import Map from "./Map";
 
-const HomePage = () => {
+const HomePage = ({ pageName, setPageName }) => {
     return (
-        <Box sx={{ height: "100vh", width: "100%" }}>
-            <Map />
-        </Box>
+        <Map pageName={pageName} setPageName={setPageName} />
     )
 }
 

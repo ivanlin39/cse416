@@ -4,7 +4,6 @@ import App from './App.jsx';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import CssBaseline from "@mui/material/CssBaseline";
 import { BrowserRouter } from "react-router-dom";
-import { GlobalProvider } from "./context/GlobalContext";
 
 const theme = createTheme({
   palette: {
@@ -12,11 +11,6 @@ const theme = createTheme({
     primary: {
       main: "#607d8b"
     },
-    typography: {
-      button: {
-        textTransform: "none",
-      },
-    }
   }
 });
 
@@ -25,9 +19,7 @@ createRoot(document.getElementById('root')).render(
     <ThemeProvider theme={theme}>
       <CssBaseline>
         <BrowserRouter>
-          <GlobalProvider>
-            <App />
-          </GlobalProvider>
+          <App />
         </BrowserRouter>
       </CssBaseline>
     </ThemeProvider>

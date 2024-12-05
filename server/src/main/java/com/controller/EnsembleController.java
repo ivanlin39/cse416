@@ -1,4 +1,5 @@
 package com.controller;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -7,18 +8,18 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.fasterxml.jackson.databind.JsonNode;
-import com.service.BorderService;
+import com.model.Ensemble;
+import com.service.EnsembleService;
 
 @RestController
 @CrossOrigin
-@RequestMapping("/api/border")
-public class BorderController {
-    @Autowired 
-    private BorderService borderService;
-
-    @GetMapping("/{plan}")
-    public ResponseEntity<JsonNode> getBorder(@PathVariable("plan") String plan){
-        return ResponseEntity.ok(borderService.getBorderData(plan));
+@RequestMapping("/api/plan")
+public class EnsembleController {
+    @Autowired
+    private EnsembleService ensembleService;
+    
+    @GetMapping("/{planType}")
+    public ResponseEntity<Ensemble> getEnsembleData(@PathVariable("planType") String planType){
+        return ResponseEntity.ok(ensembleService.getEnsembleById(planType));
     }
 }

@@ -1,29 +1,28 @@
-import { useEffect, useContext } from "react";
-import { Box } from "@mui/material";
+import { useEffect, useState } from "react";
+import { Box, Button } from "@mui/material";
 import Banner from "./components/Banner";
-import { GlobalContext } from "./context/GlobalContext";
 import { Routes, Route, useNavigate } from "react-router-dom";
-import HomePage from "./components/HomePage";
 import MarylandPage from "./components/MarylandPage";
+import HomePage from "./components/HomePage";
 
 function App() {
-  const { state } = useContext(GlobalContext);
-    const navigate = useNavigate();
+  const [pageName, setPageName] = useState("USA");
+  const navigate = useNavigate();
 
-    useEffect(() => {
-        if(state.name === "USA"){
-            navigate("/");
-        }else{
-            navigate("/Maryland");
-        }
-    }, [state]);
+  useEffect(() => {
+    if (pageName === "USA") {
+      navigate("/");
+    } else if(pageName === "Maryland") {
+      navigate("/Maryland");
+    }
+  }, [pageName]);
 
   return (
-    <Box sx={{ height: "100vh", width: "100%"}}>
-      <Banner />
+    <Box sx={{ height: "100vh", width: "100%" }}>
+      <Banner pageName={pageName} setPageName={setPageName} />
       <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/Maryland" element={<MarylandPage />} />
+        <Route path="/" element={ <HomePage pageName={pageName} setPageName={setPageName}/> }/>
+        <Route path="/Maryland" element={ <MarylandPage pageName={pageName} setPageName={setPageName} /> }/>
       </Routes>
     </Box>
   )

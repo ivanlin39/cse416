@@ -11,14 +11,24 @@ import java.io.IOException;
 @Service
 public class BorderService {
     private final ObjectMapper objectMapper = new ObjectMapper();
-
-    public JsonNode getUSBorder() throws IOException{
-        String jsonString = readJsonFile("USBorder.json");
-        return objectMapper.readTree(jsonString);
+    
+    public JsonNode getBorderData(String plan) {
+        String borderData = null;
+        try{
+            if(plan.equals("USA")){
+                borderData = readJsonFile("USBorder.json"); 
+            }else{
+                borderData = readJsonFile("CurrentDistrictPlan.json"); 
+            }
+            return objectMapper.readTree(borderData);
+        } catch (IOException e) {
+            e.printStackTrace();
+            return null;
+        }
     }
 
-    public JsonNode getMarylandBorder() throws IOException{
-        String jsonString = readJsonFile("MarylandBorder.json");
+    public JsonNode getCurrentDistrictPlanBorder() throws IOException{
+        String jsonString = readJsonFile("CurrentDistrictPlanBorder.json");
         return objectMapper.readTree(jsonString);
     }
 
