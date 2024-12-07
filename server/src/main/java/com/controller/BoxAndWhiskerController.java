@@ -1,7 +1,5 @@
 package com.controller;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -23,7 +21,6 @@ public class BoxAndWhiskerController{
 
     @GetMapping("/{planType}/{category}")
     public ResponseEntity<BoxAndWhisker> getBoxAndWhiskerData(@PathVariable("planType") String planType, @PathVariable("category") Category category) {
-        System.out.println(26 + " " + planType + "  "  + category);
         return ResponseEntity.ok(boxAndWhiskerService.getBoxAndWhiskerByPlanTypeAndCategory(planType, category));
     }
 }

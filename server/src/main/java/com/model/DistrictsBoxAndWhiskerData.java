@@ -1,17 +1,10 @@
 package com.model;
 
-import org.springframework.data.mongodb.core.mapping.Field;
-
-public class DistrictBoxAndWhiskerData {
-    @Field("min")
+public class DistrictsBoxAndWhiskerData {
     private double min;
-    @Field("q1")
     private double q1;
-    @Field("median")
     private double median;
-    @Field("q3")
     private double q3;
-    @Field("max")
     private double max;
 
     public double getMin(){return this.min;}

@@ -9,5 +9,5 @@ import com.model.SeatVote;
 @Repository
 public interface SeatVoteRepository extends MongoRepository<SeatVote, Integer> {
     @Query("{ 'planType': ?0, 'planNum': ?1 }")
-    SeatVote findByPlanTypeAndPlanNum(String planType, Integer planNum);
+    SeatVote findByPlanTypeAndPlanNum(String planType, int planNum);
 }

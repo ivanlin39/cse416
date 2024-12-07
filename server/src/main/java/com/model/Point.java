@@ -1,20 +1,15 @@
 package com.model;
 
-import org.springframework.data.mongodb.core.mapping.Field;
-
 public class Point {
-    @Field("votes")
     private double votes;
-    @Field("repSeats")
-    private double repSeats;
-    @Field("demSeats")
-    private double demSeats;
+    private double seatsR;
+    private double seatsD;
 
     public double getVotes(){return this.votes;}
-    public double getRepSeats(){return this.repSeats;}
-    public double getDemSeats(){return this.demSeats;}
+    public double getSeatsR(){return this.seatsR;}
+    public double getSeatsD(){return this.seatsD;}
     public void setVotes(double votes){this.votes = votes;}
-    public void setRepSeats(double repSeats){this.repSeats = repSeats;}
-    public void setDemSeats(double demSeats){this.demSeats = demSeats;}
+    public void setRepSeats(double seatsR){this.seatsR = seatsR;}
+    public void setDemSeats(double seatsD){this.seatsD = seatsD;}
 
 }
