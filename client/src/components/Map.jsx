@@ -9,33 +9,25 @@ const ZoomedMap = ({ center, zoom }) => {
 }
 
 const Map = ({ pageName, setPageName }) => {
-    const [usaBorder, setUSABorder] = useState(null);
     const [currentDistrictPlan, setCurrentDistrictPlan] = useState(null);
     const [selectedDistrictPlan, setSelectedDistrictPlan] = useState(null);
     const [areaData, setAreaData] = useState(null);
 
     useEffect(() => {
-        getBorderAsync("USA").then((data) => setUSABorder(data)).catch((err) => console.log(err));
         getBorderAsync("currentDistrictPlan").then((data) => setCurrentDistrictPlan(data)).catch((err) => console.log(err));
         getAreaDataAsync(pageName).then((data) => setAreaData(data)).catch((err) => console.log(err));
     }, [pageName]);
 
     return (
-        usaBorder && currentDistrictPlan && areaData && (
+        currentDistrictPlan && areaData && (
             <MapContainer center={{ lat: areaData.lat, lng: areaData.lng }} zoom={areaData.zoom} minZoom={areaData.zoom} maxBounds={areaData.maxBounds}
-                style={{ height: "92%", width: "100%" }}
+                style={{ height: "100%", width: "100%" }}
             >
                 <TileLayer
                     attribution='&copy; <a href="https://stadiamaps.com/" target="_blank">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/" target="_blank">OpenMapTiles</a> &copy; <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a>'
                     url="https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png"
                 />
                 <ZoomedMap center={{ lat: areaData.lat, lng: areaData.lng }} zoom={areaData.zoom} />
-                {usaBorder &&
-                    <GeoJSON
-                        data={usaBorder}
-                        style={() => ({ color: "#607d8b", weight: 2, opacity: 1 })}
-                    />
-                }
                 {currentDistrictPlan &&
                     <GeoJSON
                         data={currentDistrictPlan}

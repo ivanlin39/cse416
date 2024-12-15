@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Box, Button } from "@mui/material";
+import { Box } from "@mui/material";
 import Banner from "./components/Banner";
 import { Routes, Route, useNavigate } from "react-router-dom";
 import MarylandPage from "./components/MarylandPage";
@@ -18,7 +18,7 @@ function App() {
   }, [pageName]);
 
   return (
-    <Box sx={{ height: "100vh", width: "100%" }}>
+    <Box sx={{ height: "100%", width: "100%" }}>
       <Banner pageName={pageName} setPageName={setPageName} />
       <Routes>
         <Route path="/" element={ <HomePage pageName={pageName} setPageName={setPageName}/> }/>

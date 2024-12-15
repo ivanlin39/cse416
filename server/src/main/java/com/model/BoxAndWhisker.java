@@ -6,6 +6,8 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
+import com.dto.DistrictsBoxAndWhiskerData;
+
 @Document(collection="boxandwhiskers")
 public class BoxAndWhisker{
     public enum Category {EXTREME_REP, EXTREME_DEM}

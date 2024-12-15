@@ -13,7 +13,7 @@ import com.service.EnsembleService;
 
 @RestController
 @CrossOrigin
-@RequestMapping("/api/plan")
+@RequestMapping("/api/ensemble")
 public class EnsembleController {
     @Autowired
     private EnsembleService ensembleService;

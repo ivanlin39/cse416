@@ -1,4 +1,6 @@
-import { Box, AppBar, FormControl, InputLabel, Select, MenuItem } from "@mui/material";
+import {
+    Box, AppBar, FormControl, InputLabel, Select, MenuItem 
+} from "@mui/material";
 
 const Banner = ({ pageName, setPageName }) => {
 

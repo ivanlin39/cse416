@@ -31,8 +31,7 @@ export const getDistrictPlan = async (planType, planNumber) => {
 }
 export const getEnsembleSummary = async (planType) => {
     try{
-        const response = await axios.get(`http://localhost:8080/api/plan/${planType}`);
-        console.log(response.data);
+        const response = await axios.get(`http://localhost:8080/api/ensemble/${planType}`);
         return response.data;
     }catch(error){
         console.error('Error fetching ensemble data:', error)

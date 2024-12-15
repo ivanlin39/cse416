@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.model.DistrictPlan;
+import com.dto.DistrictPlan;
 import com.service.DistrictPlanService;
 
 @RestController
